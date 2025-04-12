@@ -1,17 +1,21 @@
-const usuarios = require('../db/index')
+const data = require('../db/index')
 
-const usuariosController = {index: function(req, res){ /*una ruta que envia los datos al navegador*/
-    res.render("usuarios", {lista: usuarios.lista1})},
-    /*marca → Deberá implementar la función que envía un listado de autos por marca.*/
-    nombre : function (req, res){
-        let nombre = req.params.nombre
-        
-        }, 
+const indexController = {
+    index: function(req, res) {
+        res.render('index', {productos: data.productos});
+      },
+    
+    login: function(req, res) { 
+        res.render("login")
+    },
 
-    email: function (req, res){
-            let email = req.params.email
-           
-            },
-        }
+    register: function(req, res) { 
+        res.render("register")
+    },
 
-module.exports = usuariosController
+    productA: function(req, res){
+        res.render("productA")
+    }
+}
+
+module.exports = indexController
