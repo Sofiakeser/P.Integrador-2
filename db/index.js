@@ -3,7 +3,7 @@ const data = {
         id: 1,
         nombre: "Martina Serra",
         email: "martina.serra@gmail.com",
-        fotoPerfil: "/images/users/default-image.png",
+        fotoPerfil: "/images/users/default-image.png",  //agregar una foto de perfil
     },
 
     productos:[{
@@ -12,7 +12,7 @@ const data = {
         marca: "Ford",
         modelo: "Fiesta",
         precio: 200000,
-        imagen: "/images/products/ford-fiesta.jpg",
+        imagen: "", //agregar foto auto
         descripcion: "Un auto compacto y eficiente.",
     },
     {
@@ -21,7 +21,7 @@ const data = {
         marca: "Toyota",
         modelo: "Corolla",
         precio: 250000,
-        imagen: "/images/products/toyota-corolla.jpg",
+        imagen: "", //agregar foto auto
         descripcion: "Un sedán confiable y cómodo.",
     },
     {
@@ -30,7 +30,7 @@ const data = {
         marca: "Chevrolet",
         modelo: "Tracker",
         precio: 300000,
-        imagen: "/images/products/chevrolet-tracker.jpg",
+        imagen: "", //agregar foto auto
         descripcion: "Un SUV versátil y espacioso.",
     }
     ]}
