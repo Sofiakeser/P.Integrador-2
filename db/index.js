@@ -1,47 +1,39 @@
-const users = {
-    lista1 : [{
+const data = {
+    usuario : {
         id: 1,
         nombre: "Martina Serra",
         email: "martina.serra@gmail.com",
-        fotoPerfil: "./public/images/users/default-image.png",
+        fotoPerfil: "/images/users/default-image.png",
+    },
+
+    productos:[{
+        id: 1,
+        nombre: "Ford Fiesta",
+        marca: "Ford",
+        modelo: "Fiesta",
+        precio: 200000,
+        imagen: "/images/products/ford-fiesta.jpg",
+        descripcion: "Un auto compacto y eficiente.",
     },
     {
-        id: 1,
-        nombre: "Sofia Keser",
-        email: "sofia.keser@gmail.com",
-        fotoPerfil: "/public/images/users/default-image.png",
+        id: 2,
+        nombre: "Toyota Corolla",
+        marca: "Toyota",
+        modelo: "Corolla",
+        precio: 250000,
+        imagen: "/images/products/toyota-corolla.jpg",
+        descripcion: "Un sedán confiable y cómodo.",
     },
     {
-        id: 1,
-        nombre: "Victoria Zanaedi",
-        email: "victoria.zanardi@gmail.com",
-        fotoPerfil: "./public/images/users/default-image.png",
+        id: 3,
+        nombre: "Chevrolet Tracker",
+        marca: "Chevrolet",
+        modelo: "Tracker",
+        precio: 300000,
+        imagen: "/images/products/chevrolet-tracker.jpg",
+        descripcion: "Un SUV versátil y espacioso.",
     }
-    ]
-}     
-
-const productos = {
-    lista2 : [{
-        id: 1,
-        nombre: "Martina Serra",
-        email: "martina.serra@gmail.com",
-        fotoPerfil: "./public/images/users/default-image.png",
-    },
-    {
-        id: 1,
-        nombre: "Sofia Keser",
-        email: "sofia.keser@gmail.com",
-        fotoPerfil: "/public/images/users/default-image.png",
-    },
-    {
-        id: 1,
-        nombre: "Victoria Zanaedi",
-        email: "victoria.zanardi@gmail.com",
-        fotoPerfil: "./public/images/users/default-image.png",
-    }
-    ]
-}   
+    ]}
 
 
-module.exports = users
-module.exports = productos
+module.exports = data
