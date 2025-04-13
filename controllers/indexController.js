@@ -15,6 +15,10 @@ const indexController = {
 
     productA: function(req, res){
         res.render("productA")
+    },
+
+    product: function(req, res){ 
+        res.render("product", {productos: data.productos})
     }
 }
 

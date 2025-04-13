@@ -4,4 +4,4 @@ const productController = require("../controllers/productController") /*--> Aca 
 
 router.get("/", productController.index)
 
-module.exports = router /*esto va siempre al final del docs*/
+module.exports = router /*esto va siempre al final del docs*/ 

@@ -6,7 +6,7 @@ const data = {
         fotoPerfil: "/images/users/default-image.png",  //agregar una foto de perfil
     },
 
-    productos:[{
+    productos: [{
         id: 1,
         nombre: "Ford Fiesta",
         imagen: "https://www.google.com/imgres?q=ford%20fiesta%20venta&imgurl=https%3A%2F%2Facroadtrip.blob.core.windows.net%2Fpublicaciones-imagenes%2FSmall%2Fford%2Ffiesta%2Far%2FRT_PU_78cc53bb9ae94f7c876db464f4ff1794.webp&imgrefurl=https%3A%2F%2Fwww.autocosmos.com.ar%2Fauto%2Fusado%2Fford%2Ffiesta&docid=Gp-iL02Jkw9nNM&tbnid=zy1_K_ZDrmbpIM&vet=12ahUKEwioh5GR9NWMAxXyqJUCHbflLVEQM3oECGIQAA..i&w=480&h=270&hcb=2&ved=2ahUKEwioh5GR9NWMAxXyqJUCHbflLVEQM3oECGIQAA",
@@ -68,10 +68,11 @@ const data = {
     }],
     
     comentarios:[{
-        nombre: "", 
-        texto: "", 
+        nombre: "Sofia", 
+        texto: "Este lo tuve, es una maquina", 
         imagen: "" ,
     }],
 }
+
 
 module.exports = data
