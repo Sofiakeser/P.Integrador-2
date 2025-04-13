@@ -1,12 +1,9 @@
-const searchR = require('../db/index')
+const data = require('../db/index')
 
-const psearchRController = {index: function(req, res){ /*una ruta que envia los datos al navegador*/
-    res.render("searchR", {lista2: searchR.lista2})},
-    /*marca → Deberá implementar la función que envía un listado de autos por marca.*/
-    nombre : function (req, res){
-        let nombre = req.params.nombre
-        
-        }
-    }
-
+const searchRController = {
+    index: function(req, res) {
+        res.render('searchR', {productos: data.productos});
+      },
+    
+}
 module.exports = searchRController
