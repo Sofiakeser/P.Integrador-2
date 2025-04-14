@@ -21,48 +21,19 @@
 					<p class="product-detail-description">
 						<%= productos.descripcion %> </p>
 				</article>
-				<div class="col-12 col-lg-4">
+				<div class="col-12 col-lg-4">	
 					<section class="comments">
-						<article>
-							<img src="<%= productos.comentarios.img%>" alt="">
-							<div class="data">
-								<p class="user">
-								<strong> <a href="/profile"><%= productos.comentarios.nombre %></a> </strong>
-								<%= productos.comentarios.comentario %></p>
-							</div>
-						</article>
-						<article>
-							<img src="<%= productos.comentarios.img %>" alt="">
-							<div class="data">
-								<p class="user">
-									<strong> <a href="/profile"><%= productos.comentarios.nombre %></a> </strong>
-									<%= productos.comentarios.comentario %></p>
-							</div>
-						</article>
-						<article>
-							<img src="<%= productos.comentarios.img%>" alt="">
-							<div class="data">
-								<p class="user">
-									<strong> <a href="/profile"><%= productos.comentarios.nombre %></a> </strong>
-									<%= productos.comentarios.comentario %></p>
-							</div>
-						</article>
-						<article>
-							<img src="<%= productos.comentarios.imagen%>" alt="">
-							<div class="data">
-								<p class="user">
-									<strong> <a href="/profile"><%= productos.comentarios.nombre %></a> </strong>
-									<%= productos.comentarios.texto %></p>
-							</div>
-						</article>
-						<article>
-							<img src="<%= productos.comentarios.imagen%>" alt="">
-							<div class="data">
-								<p class="user">
-									<strong> <a href="/profile"><%= productos.comentarios.nombre %></a> </strong>
-									<%= productos.comentarios.texto %></p>
-							</div>
-						</article>
+
+						<% for( let i = 0; i < 5; i++ ) { %>
+							<article>
+								<img src="<%= productos.comentarios[i].img%>" alt="foto perfil">
+								<div class="data">	
+									<p class="user">
+									<strong> <a href="/profile"><%= productos.comentarios[i].nombre %></a> </strong>
+									<%= productos.comentarios[i].comentario %></p>
+								</div>
+							</article>
+						<% } %>
 
 					</section>
 					<form class="form" action="" method="POST">
