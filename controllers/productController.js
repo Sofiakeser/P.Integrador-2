@@ -1,7 +1,7 @@
 const data = require('../db/index')
 const productController = {
     index: function(req, res){ /*una ruta que envia los datos al navegador*/
-    res.render("product", {productos: data.productos[0]})},
+    res.render("product", {productos: data.productos[1]})},
 
     comentarios: function(req, res){
         let comentarios = req.params.comentarios
@@ -13,6 +13,5 @@ const productController = {
         res.send(arrayComentarios)
     }
     }
-
 
 module.exports = productController
