@@ -14,7 +14,7 @@ const indexController = {
     },
 
     productA: function(req, res){
-        res.render("productA")
+        res.render("productA", {productos: data.productos, usuarios: data.usuario})
     },
 
     product: function(req, res){ 

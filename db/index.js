@@ -3,7 +3,7 @@ const data = {
         id: 1,
         nombre: "Martina Serra",
         email: "martina.serra@gmail.com",
-        fotoPerfil: "/images/users/rosa.png",  //agregar una foto de perfil
+        fotoPerfil: "/images/users/unnamed.png",  //agregar una foto de perfil
     },
 
     productos: [{
@@ -42,7 +42,7 @@ const data = {
     {
         id: 2,
         nombre: "Volkswagen Scirocco",
-        imagen: "/images/products/autos/imagen-scirocco.jpeg",
+        imagen: "/images/products/autos/imagen-scirocco.jpg",
         descripcion: "El Volkswagen Scirocco es un coupé deportivo compacto de diseño elegante y estilo agresivo. Combina buen rendimiento con un perfil bajo y aerodinámico, ideal para quienes buscan deportividad sin perder comodidad.",
         comentarios: [
             {

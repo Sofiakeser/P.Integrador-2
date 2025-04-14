@@ -519,6 +519,39 @@ textarea.form-input {
   padding: 15px;
 }
 
+.form{
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  width: 45%;
+  border-radius: 80px;
+  border: 2px solid #d3d3d3;
+  justify-content: center;
+  padding-bottom: 10px;
+}
+
+.col-12{
+  display: flex;
+  justify-content: center;
+}
+
+.divForms{
+  display: flex;
+  text-align: left;
+  padding: 5px;
+  margin: 5px;
+  justify-content: center;
+}
+
+.label{
+  margin-right: 5px;
+}
+
+.button{
+  width: 100px;
+  align-self: center;
+}
+
 /*====== Profile ======*/
 .info-usuario{
   border-bottom: 1px solid #ccc;

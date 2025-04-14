@@ -4,7 +4,7 @@
 <%- include('partials/head') %>
 <body>
 	<!-- Include HeaderLogueado -->
-	<%- include('partials/HeaderLogeado') %>
+	<%- include('partials/headerLogeado') %>
 
 	<!-- Datos del usuario -->
 	<section class="info-usuario container products-wrapper">
@@ -53,13 +53,12 @@
 							<article class="product-box_data">
 								<h2><%= productos[i].nombre %></h2>
 								<p><%= productos[i].descripcion %></p>
-								<p>Comentarios: 12</p>
+								<p>Comentarios: <%= productos[i].comentarios.length %></p>
 							</article>
 						</a>
 					</section>
 				</div>
 			<% } %>
-			<!-- NO ANDA!! -->
 			
 		</div>
 	</div>
