@@ -139,7 +139,7 @@ const data = {
         ]
     },
     {
-        id: 6, 
+        id: 5, 
         nombre: "Audi TT",
         imagen: "/images/products/autos/imagen-audiTT.avif",
         descripcion: "El Audi TT es un coupé deportivo compacto, conocido por su diseño moderno, su estilo elegante y su excelente desempeño. Combina potencia, tecnología y tracción quattro para una experiencia de conducción dinámica.",
@@ -172,7 +172,7 @@ const data = {
         ]
     },
     {
-        id: 7,
+        id: 6,
         nombre: "Chevrolet Camaro",
         imagen: "/images/products/autos/imagen-camaro.avif",
         descripcion: "Chevrolet Camaro es un muscle car icónico, con diseño agresivo y gran potencia. Representa el espíritu deportivo estadounidense, combinando alto rendimiento con un estilo llamativo",
@@ -205,7 +205,7 @@ const data = {
         ]
     },
     {
-        id: 8,
+        id: 7,
         nombre: "Chevrolet Onix",
         imagen: "/images/products/autos/imagen-onix.jpeg",
         descripcion: "El Chevrolet Onix es un hatchback compacto, económico y moderno. Destaca por su bajo consumo, buen equipamiento tecnológico y excelente relación precio-calidad, ideal para la ciudad.",
@@ -238,7 +238,7 @@ const data = {
         ]
     },
     {
-        id: 9,
+        id: 8,
         nombre: "Nissan Sentra",
         imagen: "/images/products/autos/imagen-sentra.jpeg",
         descripcion: "El Nissan Sentra es un sedán compacto que ofrece buen confort, diseño elegante y eficiencia en el consumo. Es una opción confiable para quienes buscan comodidad y rendimiento en el día a día.",
@@ -269,7 +269,74 @@ const data = {
                 comentario: "Es expectacular!"
             }
         ]
-    }],
+    },
+    {
+        id: 9,
+        nombre: "Volkswagen Amarok",
+        imagen: "/images/products/autos/imagen-amarok.jpeg",
+        descripcion: "La Volkswagen Amarok es una pickup robusta y versátil, ideal tanto para el trabajo como para el uso diario. Se destaca por su potencia, confort interior y buen rendimiento en todo tipo de terrenos.",
+        comentarios: [
+            {
+                nombre: "Sofia Keser", 
+                img: "/images/users/verde.jpg",
+                comentario: "Muy buen auto! calidad al 100%"
+            },
+            {
+                nombre: "Victoria Zanardi", 
+                img: "/images/users/celeste.avif",
+                comentario: "Es una maquina!!!"
+            },
+            {
+                nombre: "Agostina Ciafardini", 
+                img: "/images/users/piel.png",
+                comentario: "Servicio al cliente excelente, cumplen con lo que dicen"
+            },
+            {
+                nombre: "Amapro Ricotta", 
+                img: "/images/users/rosa.png",
+                comentario: "Entrega en timepo y forma, muy buena atencion, excelente calidad"
+            },
+            {
+                nombre: "Lourdes Tamborenea", 
+                img: "/images/users/violeta.jpg",
+                comentario: "Es expectacular!"
+            }
+        ]
+    },
+    {
+        id: 10,
+        nombre: "Nissan xtrail",
+        imagen: "/images/products/autos/imagen-nissanxtrail.jpeg",
+        descripcion: "El Nissan X-Trail es un SUV versátil y espacioso, ideal para familias. Ofrece un buen equilibrio entre confort, tecnología y capacidad off-road, con un diseño moderno y eficiente en consumo de combustible.",
+        comentarios: [
+            {
+                nombre: "Sofia Keser", 
+                img: "/images/users/verde.jpg",
+                comentario: "Muy buen auto! calidad al 100%"
+            },
+            {
+                nombre: "Victoria Zanardi", 
+                img: "/images/users/celeste.avif",
+                comentario: "Es una maquina!!!"
+            },
+            {
+                nombre: "Agostina Ciafardini", 
+                img: "/images/users/piel.png",
+                comentario: "Servicio al cliente excelente, cumplen con lo que dicen"
+            },
+            {
+                nombre: "Amapro Ricotta", 
+                img: "/images/users/rosa.png",
+                comentario: "Entrega en timepo y forma, muy buena atencion, excelente calidad"
+            },
+            {
+                nombre: "Lourdes Tamborenea", 
+                img: "/images/users/violeta.jpg",
+                comentario: "Es expectacular!"
+            }
+        ]
+    }
+]
     
 }
 
