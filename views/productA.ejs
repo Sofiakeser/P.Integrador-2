@@ -15,16 +15,25 @@
 				<h2 class="products-title">Agregar productos</h2>
 			</div>
 			<!-- Show the "ultimos" products -->
-			<h2 class="col-12">
-				<form action="/product-add" method="get" class="formProductAdd">
-					<label for="">Imagen:</label>
-					<input placeholder="Imagen" type="file" name="Imagen" id="">
-					<label for="">Nombre del producto:</label>
-					<input placeholder="Producto" type="text" name="producto" id="" required>
-					<label for="">Descripcion:</label>
-					<input placeholder="Descripcion" type="text" name="Descripcion" id="" required>
-					<button type="submit">Agregar producto</button>
-				</form>
+			<h2 class="col-12" >
+				<div class="moveit">
+					<form action="/product-add" method="get" class="formladob">
+						<div class="divForms">
+							<label class="label">Imagen:</label>
+							<input placeholder="Imagen" type="file" name="Imagen" id="">
+						</div>
+						<div class="divForms">
+							<label class="label" for="">Nombre del producto:</label>
+							<input placeholder="Producto" type="text" name="producto" id="" required>
+						</div>
+						<div class="divForms">
+							<label class="label" for="">Descripcion:</label>
+							<input placeholder="Descripcion" type="text" name="Descripcion" id="" required>
+						</div>
+						<button class="button" type="submit">Agregar producto</button>
+					</form>
+				</div>
+				
 			</h2>
 
 

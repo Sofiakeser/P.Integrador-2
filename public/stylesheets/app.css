@@ -319,6 +319,7 @@ hr {
 
 .footer-data {
   text-align: center;
+  width: 100%;
 }
 
 .footer-data i {
@@ -519,7 +520,9 @@ textarea.form-input {
   padding: 15px;
 }
 
-.form{
+
+
+.formladob{
   display: flex;
   flex-direction: column;
   text-align: center;
@@ -530,9 +533,14 @@ textarea.form-input {
   padding-bottom: 10px;
 }
 
-.col-12{
+.moveit{
   display: flex;
   justify-content: center;
+}
+
+.products-title{
+ display: flex;
+ justify-content: center;
 }
 
 .divForms{
