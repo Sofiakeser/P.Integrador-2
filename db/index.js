@@ -305,7 +305,7 @@ const data = {
     },
     {
         id: 10,
-        nombre: "Nissan xtrail",
+        nombre: "Nissan X-Trail",
         imagen: "/images/products/autos/imagen-nissanxtrail.jpeg",
         descripcion: "El Nissan X-Trail es un SUV versátil y espacioso, ideal para familias. Ofrece un buen equilibrio entre confort, tecnología y capacidad off-road, con un diseño moderno y eficiente en consumo de combustible.",
         comentarios: [
