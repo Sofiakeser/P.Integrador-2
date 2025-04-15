@@ -186,6 +186,13 @@ hr {
 
 
 /*====== Products ======*/
+
+.prodcutosDiv{
+  display: flex;
+  justify-content: center;
+  height: 400px;
+}
+
 .products-wrapper {
   margin-top: 30px;
   margin-bottom: 30px;
