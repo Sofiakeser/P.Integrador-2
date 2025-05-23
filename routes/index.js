@@ -11,5 +11,7 @@ router.get('/register', indexController.register);
 
 router.get('/product-add', indexController.productA);
 
+router.get('/productos/:id', indexController.product); /// preguntar si esta bien 
+
 module.exports = router;
 

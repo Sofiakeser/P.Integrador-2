@@ -18,7 +18,8 @@ const indexController = {
     },
 
     product: function(req, res){ 
-        res.render("product", {productos: data.productos})
+        let idproducto = req.params.id;
+        res.render("product", {productos: data.productos[8]});
     }
 }
 
