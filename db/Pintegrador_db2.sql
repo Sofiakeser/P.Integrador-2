@@ -17,7 +17,7 @@ create table usuarios (
 
 create table productos (
 	id int unsigned primary key auto_increment,
-	usuario_id int not null, /*preguntar este*/
+	usuario_id int unsigned not null, /*preguntar este*/
 	imagen_producto text not null,
 	nombre varchar(50),
 	descripcion varchar(500) not null,
@@ -31,8 +31,8 @@ create table productos (
     
 create table comentarios (
 	id int unsigned primary key auto_increment,
-	post_id int not null,
-	usuario_id int not null,
+	post_id int unsigned not null,
+	usuario_id int unsigned not null,
 	comentario varchar(500) not null,
 
 	FOREIGN KEY (usuario_id) REFERENCES usuarios(id),
@@ -60,7 +60,7 @@ insert into productos (usuario_id, imagen_producto, nombre, descripcion) -- preg
 	(4, "https://mail.google.com/mail/u/0?ui=2&ik=574f8b3854&attid=0.9&permmsgid=msg-f:1829391172321121354&th=19634d94256f944a&view=fimg&fur=ip&permmsgid=msg-f:1829391172321121354&sz=s0-l75-ft&attbid=ANGjdJ_s4Wb5HGJinXAARQfEwiq8Wl3w870KWsoW1Dmw_UibGCcR0GPRKyLKDoh6DDZtXeKaZHtITrHya6-QBhqLtG7DQx9VrZOLp9haNGJX2nKGcSoqzXmQU4q-4xk&disp=emb&realattid=ii_m9h7lh678&zw", "Chevrolet Corsa", "Chevrolet Corsa Classic 2012, motor 1.4, ideal para el día a día."), 
 	(5, "https://mail.google.com/mail/u/0?ui=2&ik=574f8b3854&attid=0.10&permmsgid=msg-f:1829391172321121354&th=19634d94256f944a&view=fimg&fur=ip&permmsgid=msg-f:1829391172321121354&sz=s0-l75-ft&attbid=ANGjdJ8e2A9BLZZQso5TNSTg3r29sg-MjugT7Co1qrc3v_wpvedtXQZ4pkn4Q0YFpd-WJrL0vKW8RFAJ5q-gHUOoNzV_1cL5MG7i3LFK7BRAeOYoGCrIhvYIQTlHuHg&disp=emb&realattid=ii_m9h7lxqw9&zw", "Ford Focus", "Ford Focus 2016, full full, pantalla táctil, cámara de retroceso, muy bien cuidado.");
 
-insert into comentarios (post_id, usuario_id, comentario) --chequear la repeticion de numero en la segunda columna 
+insert into comentarios (post_id, usuario_id, comentario) -- chequear la repeticion de numero en la segunda columna 
 	values (1, 1, "Me interesa el auto, ¿tiene algún detalle?"), 
 	(1, 2, "Hola, ¿es negociable el precio?"), 
 	(1, 3, "¿Tenés más fotos del interior?"), 
@@ -80,7 +80,7 @@ insert into comentarios (post_id, usuario_id, comentario) --chequear la repetici
 	(6, 5, "¿Tenés el título de propiedad?"), 
 	(6, 1, "¿Tenés alguna oferta en mente?"), 
 	(7, 2, "¿Está en garantía?"), 
-	(7, 3, "¿Tenés factura de compra?")
+	(7, 3, "¿Tenés factura de compra?"),
 	(7, 4, "¿Tenés el manual de usuario?"), 
 	(8, 5, "¿Está al día con los impuestos?"), 
 	(8, 1, "¿Tenés el service al día?"), 
