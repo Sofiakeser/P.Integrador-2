@@ -7,7 +7,11 @@ router.get('/', indexController.index);
 
 router.get('/login', indexController.login);
 
+//router.post('/login', indexController.login);
+
 router.get('/register', indexController.register);
+
+router.post('/register', indexController.create);
 
 router.get('/product-add', indexController.productA);
 

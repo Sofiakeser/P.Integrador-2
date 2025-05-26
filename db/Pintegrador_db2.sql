@@ -43,12 +43,12 @@ create table comentarios (
 	deletedAt  TIMESTAMP NULL ON UPDATE CURRENT_TIMESTAMP
     );
 
-insert into usuarios (email, contra, fecha, dni, foto_perfil)
+insert into usuarios (email, contra, fecha, dni)
     values ('sofikeser@gmail.com', "sofipro", "2005-08-30", "46956160"), ('martina.serra@gmail.com', "martucrack", "2005-11-02", "47153710"), 
 	('victoria.zanardi@gmail.com', "vicu123", "2006-04-06", "47206156"), ('lolo.tambo@gmail.com', "tambor", "2005-07-05", "46853421"), 
 	('amparoricotta@gmail.com', "audibb", "2006-01-07", "47153690");
 
-insert into productos (usuario_id, imagen_producto, nombre, descripcion) -- preguntar sobre si los id pueden repetirse o no 
+insert into productos (usuario_id, imagen_producto, nombre, descripcion) 
     values (1, "https://mail.google.com/mail/u/0?ui=2&ik=574f8b3854&attid=0.1&permmsgid=msg-f:1829391172321121354&th=19634d94256f944a&view=fimg&fur=ip&permmsgid=msg-f:1829391172321121354&sz=s0-l75-ft&attbid=ANGjdJ8QweV1ixhtPZj3VOxDTHuOZoWkBP9s8B4NTRBk35YQ8FUsRvdhFO07k5N2XGh9cwqZIVXDreyMPpS5A1u5o4jZEQQxHNg6_sRCiwRO7SWw_PYiOcoiD3Na3Fg&disp=emb&realattid=ii_m9h7efp20&zw", "Vendo Volkswagen Tcross", "Volkswagen T-Cross en excelente estado, modelo 2021, único dueño."), 
 	(2, "https://mail.google.com/mail/u/0?ui=2&ik=574f8b3854&attid=0.2&permmsgid=msg-f:1829391172321121354&th=19634d94256f944a&view=fimg&fur=ip&permmsgid=msg-f:1829391172321121354&sz=s0-l75-ft&attbid=ANGjdJ8MOGSR15mRa6pnl2C6-i47Umo2T22R4VQII55Tj8Qihu9VtCn7rLhI9b3Qwdru9lzrSwQbXXg3ZxAeG7f2W-nQYacsJuLlumerO4-eqBi_vTV4Z4QsPfAJo6k&disp=emb&realattid=ii_m9h7ewxs1&zw", "Jeep Renegade 2019", "Jeep Renegade, perfecta para ciudad, detalles estéticos menores."), 
 	(3, "https://mail.google.com/mail/u/0?ui=2&ik=574f8b3854&attid=0.3&permmsgid=msg-f:1829391172321121354&th=19634d94256f944a&view=fimg&fur=ip&permmsgid=msg-f:1829391172321121354&sz=s0-l75-ft&attbid=ANGjdJ-fss7Dyu1vyC0nOJJbhcXSWc-23XwHh_4wAtQvjwyqGVs15Rq_0M79DRULpIXTrmmJsCz1ILaU82sgQG-IHzoRPG1WxBk_OlDEnACEa6YYH_PjXCmhZv_ztkA&disp=emb&realattid=ii_m9h7glfw2&zw", "Citroen C3", "Citroen C3, modelo 2012, muy económico y cómodo."), 

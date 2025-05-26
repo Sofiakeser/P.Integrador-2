@@ -4,19 +4,19 @@ module.exports = function (sequelize, dataTypes) {
         id: {
             autoIncrement: true,
             primaryKey: true,
-            type: dataTypes.INTEGER(10).UNSIGNED
+            type: dataTypes.INTEGER.UNSIGNED
         },
         email: {
-            type: dataTypes.STRING(50).NOTNULL //ver lo de not null
+            type: dataTypes.STRING(50) //ver lo de not null
         },
         contra:{ 
-            type: dataTypes.STRING(20).NOTNULL 
+            type: dataTypes.STRING(20)
         },
         fecha: {
-            type: dataTypes.DATE.NOTNULL //chequear
+            type: dataTypes.DATE //chequear
         },
         dni: {
-            type: dataTypes.INTEGER(10).UNSIGNED 
+            type: dataTypes.INTEGER.UNSIGNED 
         },
         foto_perfil: {
             type: dataTypes.TEXT //chequear

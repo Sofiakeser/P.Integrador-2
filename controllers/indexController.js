@@ -1,23 +1,22 @@
-const data = require('../database/models')
+const db = require('../database/models')
 const Usuario = db.Usuario
 const Producto = db.Producto
+const bcrypt = require("bcryptjs")
+
 
 const indexController = {
     index: function(req, res) {
-        
-        Usuario.findAll({
-            include:[
-                    {association: "comentarios" },
-                    {association: "productos" }
-        ]}),
 
         Producto.findAll({
             include:[
-                    {association: "comentarios" },
-                    {association: "usuarios" } //chequear
-        ]})
+                  {association: "comentarios" },
+                  {association: "usuarios" } //chequear
+            ]})
+            .then(function(resultado){
+                res.render("index", {datos:resultado})
+            })
 
-        res.render('index', {productos: data.productos});
+        res.render('register');
       },
     
     login: function(req, res) { 
@@ -25,16 +24,65 @@ const indexController = {
     },
 
     register: function(req, res) { 
+
         res.render("register")
     },
 
+    create: function (req, res) {
+        
+        if(req.body.contrasena.length < 3){
+            return res.send("La contrasena debe tener mas de tres caracteres")
+        };
+
+        let passEncriptada = bcrypt.hashSync(req.body.password, 10);
+
+        Usuario.create({
+            usuario: req.body.usuario,
+            email: req.body.email,
+            contrasena: passEncriptada,
+            fecha: req.body.fecha
+        })
+        .then(function(resultado){
+            
+            return res.redirect("/profile");
+        })
+        .catch(function(error){
+            return res.send(error);
+        })
+
+        res.render('login')
+    },
+
     productA: function(req, res){
-        res.render("productA", {productos: data.productos, usuario: data.usuario})
+        Producto.findAll({
+            include:[
+                  {association: "comentarios" },
+                  {association: "usuarios" } 
+            ]})
+
+        Usuario.findAll({
+            include:[
+                    {association: "comentarios" },
+                    {association: "productos" }
+            ]});
+
+        res.render("productA")
     },
 
     product: function(req, res){ 
-        let idproducto = req.params.id;
-        res.render("product", {productos: data.productos[8]});
+        Producto.findAll({
+            include:[
+                  {association: "comentarios" },
+                  {association: "usuarios" } 
+            ]})
+        
+        Comentario.findAll({
+            include:[
+                    {association: "productos" },
+                    {association: "usuarios" } 
+                ]})
+
+        res.render("product");
     }
 }
 

@@ -4,16 +4,17 @@ module.exports = function (sequelize, dataTypes) {
         id: {
             autoIncrement: true,
             primaryKey: true,
-            type: dataTypes.INTEGER(10).UNSIGNED
+            type: dataTypes.INTEGER.UNSIGNED
         },
         post_id: {
-            type: dataTypes.INTEGER(10).NOTNULL //ver lo de not null
+            type: dataTypes.INTEGER.UNSIGNED //ver lo de not null
         },
         usuario_id:{ 
-            type: dataTypes.INTEGER(10).NOTNULL
+            type: dataTypes.INTEGER.UNSIGNED,
         },
         comentario: {
-            type: dataTypes.STRING(500).NOTNULL
+            type: dataTypes.STRING(500),
+   
         },
 
     };
