@@ -7,7 +7,7 @@ var logger = require('morgan');
 var indexRouter = require('./routes/index');
 const profileRouter = require("./routes/profile");
 const searchRRouter = require("./routes/search-results");
-const session = require("express-session")
+let session = require("express-session")
 
 var app = express();
 
@@ -21,13 +21,23 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
-// app.use(session)({
-//   secret: "Secreto",
-//   resave: false,
-//   saveUninitialized: true
-// })
+app.use(session({
+  secret:"secreto",
+  resave:false,
+  saveUninitialized: true
+}));
 
+app.use(function(req,res,next){
+if(req.session.userLogueado != undefined){
+  res.locals.userLogueado=req.session.userLogueado;
+}next();
+});
 
+app.use(function(req,res,next){
+  if(req.cookies.recordame != undefined && req.session.userLogueado == undefined){
+    req.session.userLogueado = req.cookies.recordame;
+  } return next();
+  });
 
 
 app.use('/', indexRouter);

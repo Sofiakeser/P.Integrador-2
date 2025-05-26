@@ -2,7 +2,7 @@ create schema dbPI;
 use dbPI;
 create table usuarios (
 	id int unsigned primary key auto_increment,
-	email varchar(50) not null,
+	email varchar(50) not null unique,
 	contra varchar(20) not null,
 	fecha date not null,
 	dni int unsigned,
