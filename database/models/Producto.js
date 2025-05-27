@@ -23,7 +23,7 @@ module.exports = function (sequelize, dataTypes) {
     let config = {
         tableName: "productos", //nombre de la tabla en la base de datos
         timestamps: true,
-        underscored: true
+        underscored: false //intento de arreglo
     }
 
     let Producto = sequelize.define(alias, cols, config);
