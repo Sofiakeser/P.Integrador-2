@@ -54,7 +54,14 @@ const indexController = {
             .catch(function(error){
                 return res.send(error);
             })
-    }
+    },
+    detalle: function(req, res){
+        //PREGUNTAR ESTO 
+        Producto.findByPk(req.params.id)
+            .then (function(resultado){
+                res.render("searchR", {busqueda: resultado})
+        })      
+    },
 }
 
 module.exports = indexController

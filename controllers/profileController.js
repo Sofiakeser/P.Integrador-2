@@ -28,9 +28,9 @@ const profileController = {
         //Procesar el login. 
         //Usando el dato del email del formulario busca si existe un registro en la base de datos. 
         Usuario.findOne({
-            where: [{
+            where: {
                 email: req.body.email
-            }] 
+            } 
         })
         .then(function(resultado){
             if(resultado != null){
@@ -75,7 +75,7 @@ const profileController = {
 
         Usuario.create({
             email: req.body.email,
-            contra: passEncriptada,
+            password: passEncriptada,
             fecha: req.body.fecha
         })
         .then(function(resultado){
