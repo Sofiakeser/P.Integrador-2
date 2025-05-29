@@ -39,6 +39,8 @@ if(req.session.userLogueado != undefined){
 }next();
 });
 
+
+
 app.use('/', indexRouter);
 app.use("/profile", profileRouter);
 app.use("/searchR", searchRRouter); 

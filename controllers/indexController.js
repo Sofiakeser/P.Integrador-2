@@ -1,6 +1,7 @@
 const db = require('../database/models')
 const Usuario = db.Usuario
 const Producto = db.Producto
+const Comentario = db.Comentario
 const bcrypt = require("bcryptjs")
 
 
@@ -37,13 +38,13 @@ const indexController = {
     },
 
     product: function(req, res){ 
-        Producto.findAll({
-            include:[
+        Producto.findAll({ //esto lo deberiamos borrar, porque estas buscando todos los productos y dentro de products vos estas buscando solo el pedido
+            include:[ //aca deberia ir findByPk? en vez de findAll
                   {association: "comentarios" },
                   {association: "usuarios" } 
             ]})
         
-        Comentario.findAll({
+        Comentario.findAll({ //preguntar si teine que ir esto
             include:[
                     {association: "productos" },
                     {association: "usuarios" } 
