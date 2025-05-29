@@ -15,9 +15,10 @@ const indexController = {
             .then(function(resultado){
                 res.render("index", {datos:resultado})
             })
-
-        res.render('register');
-      },
+            .catch(function(error){
+                return res.send(error);
+            })
+          },
 
     productA: function(req, res){
         Producto.findAll({
@@ -47,8 +48,12 @@ const indexController = {
                     {association: "productos" },
                     {association: "usuarios" } 
                 ]})
-
-        res.render("product");
+            .then(function(resultado){
+                res.render("product", {datos:resultado})
+            })
+            .catch(function(error){
+                return res.send(error);
+            })
     }
 }
 

@@ -36,7 +36,7 @@
                 <h2>Bienvenido: <%= locals.userLogueado.nombre %>!</h2>
                 <ul class="right-navbar"></ul>
                     <li>
-                        <form action="profile/logout" method="POST"> 
+                        <form action="/profile/logout" method="POST"> 
                             <button class="logout" type="submit">
                                 Cerrar sesión <i class="fas fa-sign-in-alt"></i>
                             </button>
@@ -46,15 +46,15 @@
                     <li><a href="/profile"> Mi Perfil <i class="fas fa-user"></i></a>
                     </li>
                 </ul>
-            <% } %>
- <!-- para cuando el usuario NO está logueado -->
+ 
+            <% } else  { %>
+                <!-- para cuando el usuario NO está logueado -->
 
-            <% if (locals.userLogueado == undefined) { %>
                 <ul>
                     <li>
-                        <a href="profile/register" class ="textos" >Creá tu cuenta <i class="far fa-address-card"></i>  <!-- SE PONE /REGISTER PORQUE ASI ES COMO LO TENEMOS EN LAS RUTAS --></a>
+                        <a href="/profile/register" class ="textos" >Creá tu cuenta <i class="far fa-address-card"></i>  <!-- SE PONE /REGISTER PORQUE ASI ES COMO LO TENEMOS EN LAS RUTAS --></a>
                     </li>
-                    <li><a href="profile/login" class ="textos" >Ingresá <i class="fas fa-sign-in-alt"></i></a>
+                    <li><a href="/profile/login" class ="textos" >Ingresá <i class="fas fa-sign-in-alt"></i></a>
                     </li>
                 </ul>
             <% } %>

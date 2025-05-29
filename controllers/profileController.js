@@ -1,6 +1,6 @@
 const db = require('../database/models')
 const Usuario = db.Usuario //Preguntar si hace falta en cada uno que este
-
+const bcrypt = require("bcryptjs")
 
 const profileController = {
     index: function(req, res){ 
@@ -9,9 +9,13 @@ const profileController = {
             include:[
                     {association: "comentarios" },
                     {association: "productos" }
-        ]});
-    
-    res.render("profile")},
+        ]})
+        .then(function(resultado){
+                res.render("profile", {datos:resultado})
+        })
+        .catch(function(error){
+            return res.send(error);
+        })},
 
     login: function(req, res){
         if(req.session.userLoggeado != undefined){
@@ -23,10 +27,10 @@ const profileController = {
     processLogin: function(req,res){
         //Procesar el login. 
         //Usando el dato del email del formulario busca si existe un registro en la base de datos. 
-        User.findOne({
+        Usuario.findOne({
             where: [{
                 email: req.body.email
-            }] //esto ya da error si no existe?
+            }] 
         })
         .then(function(resultado){
             if(resultado != null){
@@ -40,7 +44,7 @@ const profileController = {
                     if(req.body.recordame != undefined){
                         res.cookie("recordame", resultado, {maxAge: 1000 * 60 * 60});
                     }
-                    return res.redirect("/"); //preguntar, manda al homeo al profile?
+                    return res.redirect("/"); //preguntar, manda al home o al profile?
                 }
             }  
             else{
@@ -63,20 +67,20 @@ const profileController = {
 
     create: function (req, res) {
         
-        if(req.body.contrasena.length < 3){
-            return res.send("La contrasena debe tener mas de tres caracteres")
+        if(req.body.password.length < 3){
+            return res.send("La contraseña debe tener mas de tres caracteres")
         };
 
         let passEncriptada = bcrypt.hashSync(req.body.password, 10);
 
         Usuario.create({
             email: req.body.email,
-            contrasena: passEncriptada,
+            contra: passEncriptada,
             fecha: req.body.fecha
         })
         .then(function(resultado){
             
-            return res.redirect("/login");
+            return res.redirect("/profile/login");
         })
         .catch(function(error){
             return res.send(error);

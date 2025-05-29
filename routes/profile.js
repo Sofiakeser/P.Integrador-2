@@ -6,11 +6,11 @@ router.get("/", profileController.index)
 
 router.get('/login', profileController.login);
 
-router.post('/login', profileController.processLogin);
+router.post('/processLogin', profileController.processLogin);
 
 router.get('/register', profileController.register);
 
-router.post('/register', profileController.create);
+router.post('/processRegister', profileController.create);
 
 router.post('/logout', profileController.logout);
 

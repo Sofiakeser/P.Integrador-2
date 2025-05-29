@@ -2,6 +2,7 @@ create schema dbPI;
 use dbPI;
 create table usuarios (
 	id int unsigned primary key auto_increment,
+	usuario varchar(20) not null,
 	email varchar(50) not null unique,
 	contra varchar(20) not null,
 	fecha date not null,
@@ -43,16 +44,17 @@ create table comentarios (
 	deletedAt  TIMESTAMP NULL ON UPDATE CURRENT_TIMESTAMP
     );
 
-insert into usuarios (email, contra, fecha, dni)
-    values ('sofikeser@gmail.com', "sofipro", "2005-08-30", "46956160"), ('martina.serra@gmail.com', "martucrack", "2005-11-02", "47153710"), 
-	('victoria.zanardi@gmail.com', "vicu123", "2006-04-06", "47206156"), ('lolo.tambo@gmail.com', "tambor", "2005-07-05", "46853421"), 
-	('amparoricotta@gmail.com', "audibb", "2006-01-07", "47153690");
+insert into usuarios (usuario, email, contra, fecha, dni, foto_perfil)
+    values ("Sofia Keser","sofikeser@gmail.com", "sofipro", "2005-08-30", "46956160", "https://img.freepik.com/fotos-premium/textura-papel-rosa-profundo-vertical-motas-ruido_469558-42157.jpg?semt=ais_hybrid&w=740"), ("Martina Serra","martina.serra@gmail.com", "martucrack", "2005-11-02", "47153710", "https://coloresypunto.wordpress.com/wp-content/uploads/2013/06/colores_y_punto_verde_esmeralda.jpg"), 
+	("Victoria Zanardi","victoria.zanardi@gmail.com", "vicu123", "2006-04-06", "47206156", "https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.shutterstock.com%2Fes%2Fimage-illustration%2Fdark-violet-color-background-shades-soft-2213734799&psig=AOvVaw0oYVFguRVjPYhfDiZ1ACf5&ust=1748633395446000&source=images&cd=vfe&opi=89978449&ved=0CBQQjRxqFwoTCMjDh5a1yY0DFQAAAAAdAAAAABAL"), ("Lourdes Tamborenea","lolo.tambo@gmail.com", "tambor", "2005-07-05", "46853421", "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS8aaCEN6hLZq0-ELEBIlPU7JQq1oFZFHjB9w&s"), 
+	("Amparo Ricotta","amparoricotta@gmail.com", "audibb", "2006-01-07", "47153690", "https://distribuidorlacolo.com.ar/wp-content/uploads/download-9.png
+");
 
 insert into productos (usuario_id, imagen_producto, nombre, descripcion) 
-    values (1, "https://mail.google.com/mail/u/0?ui=2&ik=574f8b3854&attid=0.1&permmsgid=msg-f:1829391172321121354&th=19634d94256f944a&view=fimg&fur=ip&permmsgid=msg-f:1829391172321121354&sz=s0-l75-ft&attbid=ANGjdJ8QweV1ixhtPZj3VOxDTHuOZoWkBP9s8B4NTRBk35YQ8FUsRvdhFO07k5N2XGh9cwqZIVXDreyMPpS5A1u5o4jZEQQxHNg6_sRCiwRO7SWw_PYiOcoiD3Na3Fg&disp=emb&realattid=ii_m9h7efp20&zw", "Vendo Volkswagen Tcross", "Volkswagen T-Cross en excelente estado, modelo 2021, único dueño."), 
-	(2, "https://mail.google.com/mail/u/0?ui=2&ik=574f8b3854&attid=0.2&permmsgid=msg-f:1829391172321121354&th=19634d94256f944a&view=fimg&fur=ip&permmsgid=msg-f:1829391172321121354&sz=s0-l75-ft&attbid=ANGjdJ8MOGSR15mRa6pnl2C6-i47Umo2T22R4VQII55Tj8Qihu9VtCn7rLhI9b3Qwdru9lzrSwQbXXg3ZxAeG7f2W-nQYacsJuLlumerO4-eqBi_vTV4Z4QsPfAJo6k&disp=emb&realattid=ii_m9h7ewxs1&zw", "Jeep Renegade 2019", "Jeep Renegade, perfecta para ciudad, detalles estéticos menores."), 
+    values (1, "https://mail.google.com/mail/u/0?ui=2&ik=574f8b3854&attid=0.1&permmsgid=msg-f:1829391172321121354&th=19634d94256f944a&view=fimg&fur=ip&permmsgid=msg-f:1829391172321121354&sz=s0-l75-ft&attbid=ANGjdJ8QweV1ixhtPZj3VOxDTHuOZoWkBP9s8B4NTRBk35YQ8FUsRvdhFO07k5N2XGh9cwqZIVXDreyMPpS5A1u5o4jZEQQxHNg6_sRCiwRO7SWw_PYiOcoiD3Na3Fg&disp=emb&realattid=ii_m9h7efp20&zw", "Volkswagen Tcross", "Volkswagen T-Cross en excelente estado, modelo 2021, único dueño."), 
+	(2, "https://mail.google.com/mail/u/0?ui=2&ik=574f8b3854&attid=0.2&permmsgid=msg-f:1829391172321121354&th=19634d94256f944a&view=fimg&fur=ip&permmsgid=msg-f:1829391172321121354&sz=s0-l75-ft&attbid=ANGjdJ8MOGSR15mRa6pnl2C6-i47Umo2T22R4VQII55Tj8Qihu9VtCn7rLhI9b3Qwdru9lzrSwQbXXg3ZxAeG7f2W-nQYacsJuLlumerO4-eqBi_vTV4Z4QsPfAJo6k&disp=emb&realattid=ii_m9h7ewxs1&zw", "Jeep Renegade", "Jeep Renegade 2019, perfecta para ciudad, detalles estéticos menores."), 
 	(3, "https://mail.google.com/mail/u/0?ui=2&ik=574f8b3854&attid=0.3&permmsgid=msg-f:1829391172321121354&th=19634d94256f944a&view=fimg&fur=ip&permmsgid=msg-f:1829391172321121354&sz=s0-l75-ft&attbid=ANGjdJ-fss7Dyu1vyC0nOJJbhcXSWc-23XwHh_4wAtQvjwyqGVs15Rq_0M79DRULpIXTrmmJsCz1ILaU82sgQG-IHzoRPG1WxBk_OlDEnACEa6YYH_PjXCmhZv_ztkA&disp=emb&realattid=ii_m9h7glfw2&zw", "Citroen C3", "Citroen C3, modelo 2012, muy económico y cómodo."), 
-	(4, "https://mail.google.com/mail/u/0?ui=2&ik=574f8b3854&attid=0.4&permmsgid=msg-f:1829391172321121354&th=19634d94256f944a&view=fimg&fur=ip&permmsgid=msg-f:1829391172321121354&sz=s0-l75-ft&attbid=ANGjdJ-DyxW7P_g9uGntkNp_FURk-KhSl4XYa0OElp4STLDUloBxaQPGqaRGSV6ofoSMWMVErk42RIx1F8m7AzGQ3HfjEk255MJ_MyIpj8FBvNNXu9qyJBPuab6T1HE&disp=emb&realattid=ii_m9h7hjkq3&zw", "Renault Clio", "Renault Clio 2005, motor 1.2, bajo consumo, ideal primer auto."), 
+	(4, "https://http2.mlstatic.com/D_NQ_NP_725401-MLA42364401121_062020-O.webp", "Amarok", "La Volkswagen Amarok es una pickup robusta y versátil, ideal tanto para el trabajo como para el uso diario. Se destaca por su potencia, confort interior y buen rendimiento en todo tipo de terrenos."), 
 	(5, "https://mail.google.com/mail/u/0?ui=2&ik=574f8b3854&attid=0.5&permmsgid=msg-f:1829391172321121354&th=19634d94256f944a&view=fimg&fur=ip&permmsgid=msg-f:1829391172321121354&sz=s0-l75-ft&attbid=ANGjdJ9TE-FKIibB5gBc9nPahiJjsOUwqyYo-ujWqxyALn_FBpYOSTrRhRtL8HOFZi2bCvhw9k9Ij0cTiaH2xFlqk2ue4nBLtRhA2D9kvEEFMVws_5Whw4eUCtdT3Qk&disp=emb&realattid=ii_m9h7i8g74&zw", "Audi A1", "Audi A1 modelo 2016, excelente estado, servicios al día, único dueño."), 
 	(1, "https://mail.google.com/mail/u/0?ui=2&ik=574f8b3854&attid=0.7&permmsgid=msg-f:1829391172321121354&th=19634d94256f944a&view=fimg&fur=ip&permmsgid=msg-f:1829391172321121354&sz=s0-l75-ft&attbid=ANGjdJ85c0aPwYSm7_WDUhQWIXhM6ZY4euciBF1pmWlAL-b0g6R_TShp1qaO_F_xs5UGFx0EF_8W-h-304vZiwX7Q2poN346gAuU5qxhcqb8KeNEMef56MuiMEDL4mE&disp=emb&realattid=ii_m9h7kgrh6&zw", "Audi A3", "Audi A3 Sportback 2017, impecable, papeles al día, 80.000km."), 
 	(2, "https://mail.google.com/mail/u/0?ui=2&ik=574f8b3854&attid=0.6&permmsgid=msg-f:1829391172321121354&th=19634d94256f944a&view=fimg&fur=ip&permmsgid=msg-f:1829391172321121354&sz=s0-l75-ft&attbid=ANGjdJ8tYS4LWh8xu3setZN6PGeosgCKFKH2VTY9ADXmtevGufjlRzdV9C8y4rHb-d4ds6y_IB9bvUwpkn8aJR0JyPVBHnwCRYdloaDggnF841-3EIpTEJ6fA_lxYc0&disp=emb&realattid=ii_m9h7j9115&zw", "BMW Serie 3", "BMW 320i modelo 2015, motor turbo, caja automática, muy buen estado."), 

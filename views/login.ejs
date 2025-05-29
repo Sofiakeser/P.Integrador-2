@@ -17,7 +17,7 @@
 			<!-- Show the "ultimos" products -->
 			<h2 class="col-12">
 				<div class="moveit">
-					<form action="/profile" method="post" class="formladob">
+					<form action="/profile/processLogin" method="POST" class="formladob">
 						<div class="divForms">
 							<label class="label" for="">Usuario:</label>
 							<input placeholder="Email" type="email" name="email" id="" required>
@@ -27,14 +27,11 @@
 							<input placeholder="Contraseña" type="password" name="password" id="" required>
 						</div>
 						<div class="divForms">
-							<label class="label" for="">Recordarme</label>
-							<input type="checkbox" name="Recordarme" id="">
+							<label class="label" for="tyc">Recordarme:</label>
+							<input type="checkbox" name="tyc" id="tyc">
 						</div>
 						<button class="button" type="submit">Iniciar sesion</button>
-						<div>
-							<input type="checkbox" id="tyc" name="tyc">
-							<label for="tyc">Recordame: </label>
-						</div>
+
 					</form>
 				</div>
 				

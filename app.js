@@ -28,17 +28,16 @@ app.use(session({
 }));
 
 app.use(function(req,res,next){
-if(req.session.userLogueado != undefined){
-  res.locals.userLogueado=req.session.userLogueado;
-}next();
-});
-
-app.use(function(req,res,next){
   if(req.cookies.recordame != undefined && req.session.userLogueado == undefined){
     req.session.userLogueado = req.cookies.recordame;
   } return next();
   });
-
+  
+app.use(function(req,res,next){
+if(req.session.userLogueado != undefined){
+  res.locals.userLogueado=req.session.userLogueado;
+}next();
+});
 
 app.use('/', indexRouter);
 app.use("/profile", profileRouter);
