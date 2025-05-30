@@ -1,5 +1,5 @@
 const db = require('../database/models')
-const Producto = db.Producto //Preguntar si hace falta en cada uno que este
+const Producto = db.Producto 
 let op = db.sequelize.Op
 
 const searchRController = {
@@ -20,20 +20,21 @@ const searchRController = {
         res.render('searchR');
       },
       
-      search: function(req, res){
-        //Mostrar los datos de una película las pleículas en la vista movies.ejs. Modificá el código para conseguir el objetivo.
+    search: function(req, res){
         Producto.findAll({
             where: {
-                title: {
-                  [op.like]: `%${req.query.search}%`
-                }
+                title: {[op.like]: `%${req.query.search}%`}
               }
         })
-            .then (function(resultados){
-                res.render("searchR", {buscador: resultados});
-            })
+        .then (function(resultados){
+            res.render("searchR", {buscador: resultados});
+        })
     },
-    
-    
+    show: function(req, res){
+        Producto.findByPk(req.params.id)
+            .then (function(resultado){ //Preguntar este y el de ProductD
+                res.render("searchR", {buscador: resultado})
+        })      
+    },  
 }
 module.exports = searchRController

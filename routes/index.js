@@ -7,7 +7,7 @@ router.get('/', indexController.index);
 
 router.get('/product-add', indexController.productA);
 
-router.get('/productos/:id', indexController.product); 
+router.get('/productos/:id', indexController.productD); 
 
 module.exports = router;
 

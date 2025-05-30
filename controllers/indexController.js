@@ -13,6 +13,12 @@ const indexController = {
                   {association: "comentarios" },
                   {association: "usuarios" } //chequear
             ]})
+
+        Usuario.findAll({
+            include:[
+                    {association: "comentarios" },
+                    {association: "productos" }
+            ]})
             .then(function(resultado){
                 res.render("index", {datos:resultado})
             })
@@ -20,7 +26,7 @@ const indexController = {
                 return res.send(error);
             })
           },
-
+        //Preguntar ESTOOO
     productA: function(req, res){
         Producto.findAll({
             include:[
@@ -37,7 +43,7 @@ const indexController = {
         res.render("productA")
     },
 
-    product: function(req, res){ 
+    productD: function(req, res){ 
         Producto.findAll({ //esto lo deberiamos borrar, porque estas buscando todos los productos y dentro de products vos estas buscando solo el pedido
             include:[ //aca deberia ir findByPk? en vez de findAll
                   {association: "comentarios" },
@@ -55,14 +61,7 @@ const indexController = {
             .catch(function(error){
                 return res.send(error);
             })
-    },
-    detalle: function(req, res){
-        //PREGUNTAR ESTO 
-        Producto.findByPk(req.params.id)
-            .then (function(resultado){
-                res.render("searchR", {busqueda: resultado})
-        })      
-    },
-}
+    }}
+
 
 module.exports = indexController
