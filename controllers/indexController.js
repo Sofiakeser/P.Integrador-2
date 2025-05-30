@@ -13,13 +13,8 @@ const indexController = {
                   {association: "comentarios" },
                   {association: "usuarios" } //chequear
             ]})
-
-        Usuario.findAll({
-            include:[
-                    {association: "comentarios" },
-                    {association: "productos" }
-            ]})
             .then(function(resultado){
+                console.log(resultado[1].usuarios.email)
                 res.render("index", {datos:resultado})
             })
             .catch(function(error){
@@ -34,11 +29,6 @@ const indexController = {
                   {association: "usuarios" } 
             ]})
 
-        Usuario.findAll({
-            include:[
-                    {association: "comentarios" },
-                    {association: "productos" }
-            ]});
 
         res.render("productA")
     },
@@ -49,12 +39,6 @@ const indexController = {
                   {association: "comentarios" },
                   {association: "usuarios" } 
             ]})
-        
-        Comentario.findAll({ //preguntar si teine que ir esto
-            include:[
-                    {association: "productos" },
-                    {association: "usuarios" } 
-                ]})
             .then(function(resultado){
                 res.render("product", {datos:resultado})
             })

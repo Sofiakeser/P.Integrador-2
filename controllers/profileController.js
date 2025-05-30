@@ -33,9 +33,12 @@ const profileController = {
             } 
         })
         .then(function(resultado){
+            console.log(resultado)
             if(resultado != null){
             //Si existe el usuario en la db chequeá que la contraseña sea la que tenemos registrada en la db. Deberás comparar lo que se recibe por el form vs lo que está en base de datos. Revisá los métodos de bcrypt. Hay uno que hace todo y retorna un booleano.
-                let check = bcrypt.compareSync(req.body.password, resultado.password);
+            console.log("contra: " + req.body.contra)    
+            console.log("contra1: " + resultado.contra)    
+            let check = bcrypt.compareSync(req.body.contra, resultado.contra);
                 if(check){
                     //Si todo sale bien poné los datos del usuario en session.
                     req.session.userLoggeado = resultado;
@@ -75,7 +78,7 @@ const profileController = {
 
         Usuario.create({
             email: req.body.email,
-            password: passEncriptada,
+            contra: passEncriptada,
             fecha: req.body.fecha
         })
         .then(function(resultado){

@@ -6,11 +6,14 @@ module.exports = function (sequelize, dataTypes) {
             primaryKey: true,
             type: dataTypes.INTEGER.UNSIGNED
         },
+        Usuario: {
+            type: dataTypes.STRING(50) 
+        },
         email: {
             type: dataTypes.STRING(50) //ver lo de not null
         },
         contra:{ 
-            type: dataTypes.STRING(20)
+            type: dataTypes.STRING(500)
         },
         fecha: {
             type: dataTypes.DATE //chequear
