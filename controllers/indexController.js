@@ -28,9 +28,12 @@ const indexController = {
                   {association: "comentarios" },
                   {association: "usuarios" } 
             ]})
-
-
-        res.render("productA")
+            .then(function(resultado){
+                res.render("ProductA", {datos:resultado})
+            })
+            .catch(function(error){
+                return res.send(error);
+            })
     },
 
     productD: function(req, res){ 
