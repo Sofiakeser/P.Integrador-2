@@ -25,16 +25,15 @@
         </button>
 
         <nav class="main-navbar">
-            <ul class="left-navbar">
-                <li><a href="/">Todos los productos</a></li>
-                <li><a href="/product-add">Cargar productos</a></li>
-            </ul>
 
 <!-- para cuando esta logueado -->
-            <% if (locals.userLogueado != undefined) { %>
-                   
-                <h2>Bienvenido: <%= userLogueado.usuario %>!</h2>  <!-- le saue el locals -->
-                <ul class="right-navbar"></ul>
+            <% if (locals.userLoggeado != undefined) { %>
+                <ul class="left-navbar">
+                    <li><a href="/">Todos los productos</a></li>
+                    <li><a href="/product-add">Cargar productos</a></li>
+                </ul> <!-- DUDA, HAY QUE BLOQUEAR ACCESO O APARECER SOLO ACA -->  
+                <h2>Bienvenido: <%= locals.userLoggeado.usuario %>!</h2>  <!-- le saue el locals -->
+                <ul class="right-navbar">
                     <li>
                         <form action="/profile/logout" method="POST"> 
                             <button class="logout" type="submit">
@@ -49,7 +48,9 @@
  
             <% } else  { %>
                 <!-- para cuando el usuario NO está logueado -->
-
+                <ul class="left-navbar">
+                    <li><a href="/">Todos los productos</a></li>
+                </ul>
                 <ul>
                     <li>
                         <a href="/profile/register" class ="textos" >Creá tu cuenta <i class="far fa-address-card"></i>  <!-- SE PONE /REGISTER PORQUE ASI ES COMO LO TENEMOS EN LAS RUTAS --></a>

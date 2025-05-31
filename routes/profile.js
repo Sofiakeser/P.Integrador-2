@@ -12,6 +12,6 @@ router.get('/register', profileController.register);
 
 router.post('/processRegister', profileController.create);
 
-router.get('/logout', profileController.logout);
+router.post('/logout', profileController.logout);
 
 module.exports = router /*esto va siempre al final del docs*/

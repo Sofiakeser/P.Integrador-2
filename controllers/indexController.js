@@ -37,9 +37,9 @@ const indexController = {
     },
 
     productD: function(req, res){ 
-        Producto.findAll({ //esto lo deberiamos borrar, porque estas buscando todos los productos y dentro de products vos estas buscando solo el pedido
+        Producto.findByPk(req.params.id,{ //esto lo deberiamos borrar, porque estas buscando todos los productos y dentro de products vos estas buscando solo el pedido
             include:[ //aca deberia ir findByPk? en vez de findAll
-                  {association: "comentarios" },
+                  {association: "comentarios", include: [{ association: "usuarios" }]}, //CHECKEAR
                   {association: "usuarios" } 
             ]})
             .then(function(resultado){

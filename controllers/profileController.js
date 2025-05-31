@@ -85,7 +85,7 @@ const profileController = {
             return res.redirect("/profile/login");
         })
         .catch(function(error){
-            return res.send(error);
+            return res.send("Este email ya fue usado");
         })
     },
 
