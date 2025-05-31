@@ -33,7 +33,7 @@
 <!-- para cuando esta logueado -->
             <% if (locals.userLogueado != undefined) { %>
                    
-                <h2>Bienvenido: <%= locals.userLogueado.nombre %>!</h2>
+                <h2>Bienvenido: <%= userLogueado.usuario %>!</h2>  <!-- le saue el locals -->
                 <ul class="right-navbar"></ul>
                     <li>
                         <form action="/profile/logout" method="POST"> 

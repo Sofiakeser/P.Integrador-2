@@ -17,7 +17,7 @@
 		<div class="product-detail">
 			<div class="row">
 				<article class="col-12 col-lg-8 product-detail-info">
-					<img src="<%= datos.imagen_producto%>" alt="" class="product-detail-img">
+					<img src="<%= datos.imagen_producto%>" alt="" class="product-detail-img"> <!-- ACA DEBERIAMOS HACER UN FOR? YA QUE AHORA NO ES ESTATICO! -->
 					<p class="product-detail-description">
 						<%= datos.descripcion %> </p>
 				</article>
@@ -26,11 +26,11 @@
 
 						<% for( let i = 0; i < 5; i++ ) { %>
 							<article>
-								<img src="<%= datos[i].foto_perfil%>" alt="foto perfil">
+								<img src="<%= datos[i].usuarios.foto_perfil%>" alt="foto perfil">
 								<div class="data">	
 									<p class="user">
-									<strong> <a href="/profile"><%= datos[i].usuario %>:</a> </strong>
-									<%= datos[i].comentario %></p>
+									<strong> <a href="/profile"><%= datos[i].usuarios.usuario %>:</a> </strong>
+									<%= datos[i].comentarios.comentario %></p>
 								</div>
 							</article>
 						<% } %>
@@ -38,7 +38,7 @@
 					</section>
 					<form class="form" action="/productos/:id" method="get">
 						<input class="form-input" type="text" value="" placeholder="Agregar comentario">
-						<button type="submit" class="buy-now-button">AGREGAR COMENTARIO</button> <!-- CHECKEAR CUANDO HAGAMOS RUTAS -->
+						<button type="submit" class="buy-now-button">AGREGAR COMENTARIO</button> 
 					</form>
 					<hr>
 				</div>

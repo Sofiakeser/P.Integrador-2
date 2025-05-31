@@ -33,11 +33,9 @@ const profileController = {
             } 
         })
         .then(function(resultado){
-            console.log(resultado)
             if(resultado != null){
             //Si existe el usuario en la db chequeá que la contraseña sea la que tenemos registrada en la db. Deberás comparar lo que se recibe por el form vs lo que está en base de datos. Revisá los métodos de bcrypt. Hay uno que hace todo y retorna un booleano.
-            console.log("contra: " + req.body.contra)    
-            console.log("contra1: " + resultado.contra)    
+           
             let check = bcrypt.compareSync(req.body.contra, resultado.contra);
                 if(check){
                     //Si todo sale bien poné los datos del usuario en session.
@@ -47,7 +45,7 @@ const profileController = {
                     if(req.body.recordame != undefined){
                         res.cookie("recordame", resultado, {maxAge: 1000 * 60 * 60});
                     }
-                    return res.redirect("/"); //preguntar, manda al home o al profile?
+                    return res.redirect("/"); 
                 }
             }  
             else{
@@ -77,6 +75,7 @@ const profileController = {
         let passEncriptada = bcrypt.hashSync(req.body.password, 10);
 
         Usuario.create({
+            usuario: req.body.usuario,
             email: req.body.email,
             contra: passEncriptada,
             fecha: req.body.fecha
