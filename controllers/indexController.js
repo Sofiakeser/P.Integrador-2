@@ -77,10 +77,8 @@ const indexController = {
                 post_id: req.params.id})
     
             .then(function(resultado){
-                return Producto.findByPk(req.params.id, {include: [
-                { association: "comentarios", include: [{ association: "usuarios" }] },
-                { association: "usuarios" }
-            ]})}) 
+                res.redirect ("/productos/" + req.params.id) //cambiamos
+            }) 
             .then(function(resultado){
                 res.render("product", { datos: resultado });
             })
@@ -88,7 +86,7 @@ const indexController = {
                 return res.send(error);
             })    
         } else{
-            return res.redirect("/profile/login")
+            return res.redirect("/user/login")
         }
     }
 };

@@ -29,7 +29,7 @@
 								<img src="<%= datos.comentarios[i].usuarios.foto_perfil%>" alt="foto perfil">
 								<div class="data">	
 									<p class="user">
-									<strong> <a href="/profile"><%= datos.comentarios[i].usuarios.usuario %>:</a> </strong>
+									<strong> <a href="/profile/<%= datos.comentarios[i].usuarios.id %>"><%= datos.comentarios[i].usuarios.usuario %>:</a> </strong>   <!-- cambiamos --> 
 									<%= datos.comentarios[i].comentario %></p>
 								</div>
 							</article>

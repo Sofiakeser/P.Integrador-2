@@ -31,18 +31,18 @@
                 <ul class="left-navbar">
                     <li><a href="/">Todos los productos</a></li>
                     <li><a href="/product-add">Cargar productos</a></li>
-                </ul> <!-- DUDA, HAY QUE BLOQUEAR ACCESO O APARECER SOLO ACA -->  
-                <h2 class="saludo">Bienvenido: <%= locals.userLoggeado.usuario %>!</h2>  <!-- le saue el locals -->
+                </ul>   
+                <a href="/profile/<%= locals.userLoggeado.id %>"> <h2 class="saludo">Bienvenido: <%= locals.userLoggeado.usuario %>!</h2> </a> 
                 <ul class="right-navbar">
                     <li>
-                        <form action="/profile/logout" method="POST"> 
+                        <form action="/user/logout" method="POST"> 
                             <button class="logout" type="submit">
                                 Cerrar sesión <i class="fas fa-sign-in-alt"></i>
                             </button>
                         </form>
                     </li>
     
-                    <li><a href="/profile"> Mi Perfil <i class="fas fa-user"></i></a>
+                    <li><a href="/profile/<%= locals.userLoggeado.id %>"> Mi Perfil <i class="fas fa-user"></i></a> 
                     </li>
                 </ul>
  
@@ -53,9 +53,9 @@
                 </ul>
                 <ul>
                     <li>
-                        <a href="/profile/register" class ="textos" >Creá tu cuenta <i class="far fa-address-card"></i>  <!-- SE PONE /REGISTER PORQUE ASI ES COMO LO TENEMOS EN LAS RUTAS --></a>
+                        <a href="/user/register" class ="textos" >Creá tu cuenta <i class="far fa-address-card"></i> </a>
                     </li>
-                    <li><a href="/profile/login" class ="textos" >Ingresá <i class="fas fa-sign-in-alt"></i></a>
+                    <li><a href="/user/login" class ="textos" >Ingresá <i class="fas fa-sign-in-alt"></i></a>
                     </li>
                 </ul>
             <% } %>
