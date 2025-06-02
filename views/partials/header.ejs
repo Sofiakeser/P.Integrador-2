@@ -32,7 +32,7 @@
                     <li><a href="/">Todos los productos</a></li>
                     <li><a href="/product-add">Cargar productos</a></li>
                 </ul> <!-- DUDA, HAY QUE BLOQUEAR ACCESO O APARECER SOLO ACA -->  
-                <h2>Bienvenido: <%= locals.userLoggeado.usuario %>!</h2>  <!-- le saue el locals -->
+                <h2 class="saludo">Bienvenido: <%= locals.userLoggeado.usuario %>!</h2>  <!-- le saue el locals -->
                 <ul class="right-navbar">
                     <li>
                         <form action="/profile/logout" method="POST"> 

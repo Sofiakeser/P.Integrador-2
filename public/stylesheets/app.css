@@ -17,6 +17,10 @@
   font-style: normal;
 }
 
+.saludo {
+  text-decoration: none;
+} 
+
 
 /*====== Basics ======*/
 * {

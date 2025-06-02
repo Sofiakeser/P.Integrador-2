@@ -74,16 +74,21 @@ const indexController = {
             Comentario.create({
                 comentario: req.body.comentar,
                 usuario_id: req.session.userLoggeado.id,
-                product_id: req.params.id})
+                post_id: req.params.id})
     
             .then(function(resultado){
-                res.render("product", {datos:resultado})
+                return Producto.findByPk(req.params.id, {include: [
+                { association: "comentarios", include: [{ association: "usuarios" }] },
+                { association: "usuarios" }
+            ]})}) 
+            .then(function(resultado){
+                res.render("product", { datos: resultado });
             })
             .catch(function(error){
                 return res.send(error);
             })    
         } else{
-            return res.redirect("login")
+            return res.redirect("/profile/login")
         }
     }
 };

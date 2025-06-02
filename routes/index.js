@@ -13,6 +13,5 @@ router.get('/productos/:id', indexController.productD);
 
 router.post('/productos/:id', indexController.addComment)
 
-
 module.exports = router;
 
