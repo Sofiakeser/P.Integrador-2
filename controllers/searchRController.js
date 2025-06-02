@@ -1,6 +1,6 @@
 const db = require('../database/models')
 const Producto = db.Producto 
-let op = db.sequelize.Op
+let op = db.Sequelize.Op
 
 const searchRController = {
     index: function(req, res) {
@@ -8,7 +8,7 @@ const searchRController = {
       Producto.findAll({
         include:[
               {association: "comentarios" },
-              {association: "usuarios" } //chequear
+              {association: "usuarios" } 
         ]})
         .then (function(resultados){
           res.render("searchR", {buscador: resultados});
@@ -16,25 +16,33 @@ const searchRController = {
       .catch(function(error){
         return res.send(error);
       })
-
-        res.render('searchR');
       },
       
     search: function(req, res){
         Producto.findAll({
             where: {
-                title: {[op.like]: `%${req.query.search}%`}
-              }
+                nombre: {[op.like]: `%${req.query.search}%`}
+              },
+            include:[
+              {association: "comentarios" },
+              {association: "usuarios" } 
+            ]
         })
         .then (function(resultados){
             res.render("searchR", {buscador: resultados});
         })
+        .catch(function(error){
+          return res.send(error);
+        }) 
     },
     show: function(req, res){
         Producto.findByPk(req.params.id)
-            .then (function(resultado){ //Preguntar este y el de ProductD
-                res.render("searchR", {buscador: resultado})
-        })      
+        .then (function(resultado){ //Preguntar este 
+          res.render("searchR", {buscador: resultado})
+        })
+        .catch(function(error){
+          return res.send(error);
+        })    
     },  
 }
 module.exports = searchRController

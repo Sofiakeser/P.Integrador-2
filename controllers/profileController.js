@@ -46,6 +46,8 @@ const profileController = {
                         res.cookie("recordame", resultado, {maxAge: 1000 * 60 * 60});
                     }
                     return res.redirect("/"); 
+                }else{
+                    return res.send("Contraseña incorrecta");
                 }
             }  
             else{
@@ -97,3 +99,4 @@ const profileController = {
     }
 
 module.exports = profileController
+
