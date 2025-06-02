@@ -18,7 +18,7 @@ create table usuarios (
 
 create table productos (
 	id int unsigned primary key auto_increment,
-	usuario_id int unsigned not null, /*preguntar este*/
+	usuario_id int unsigned not null, 
 	imagen_producto text not null,
 	nombre varchar(50),
 	descripcion varchar(500) not null,
@@ -62,7 +62,7 @@ insert into productos (usuario_id, imagen_producto, nombre, descripcion)
 	(4, "https://cuyomotor.com.ar/wp-content/uploads/2024/06/Peugeot-208-2025.jpg", "Peugeot 208", "Peugeot 208 2022, motor 1.6, ideal para el día a día, con un diseño deportivo."), 
 	(5, "https://www.ford.es/content/dam/guxeu/rhd/central/cars/2021-focus/dse/column-cards/ford-focus-eu-Column_Card_Focus-ST-Line-X-3x2-1000x667-front-view.jpg", "Ford Focus", "Ford Focus 2016, full full, pantalla táctil, cámara de retroceso, muy bien cuidado.");
 
-insert into comentarios (post_id, usuario_id, comentario) -- chequear la repeticion de numero en la segunda columna 
+insert into comentarios (post_id, usuario_id, comentario)  
 	values (1, 1, "Me interesa el auto, ¿tiene algún detalle?"), 
 	(1, 2, "Hola, ¿es negociable el precio?"), 
 	(1, 3, "¿Tenés más fotos del interior?"), 
