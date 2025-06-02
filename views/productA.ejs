@@ -17,10 +17,10 @@
 			<!-- Show the "ultimos" products -->
 			<h2 class="col-12" >
 				<div class="moveit">
-					<form action="/product-add" method="get" class="formladob">
+					<form action="/product-add" method="post" class="formladob">
 						<div class="divForms">
 							<label class="label">Imagen:</label>
-							<input placeholder="Imagen" type="file" name="Imagen" id="">
+							<input placeholder="Imagen" type="text" name="Imagen" id="">
 						</div>
 						<div class="divForms">
 							<label class="label" for="">Nombre del producto:</label>
@@ -28,7 +28,7 @@
 						</div>
 						<div class="divForms">
 							<label class="label" for="">Descripcion:</label>
-							<input placeholder="Descripcion" type="text" name="Descripcion" id="" required>
+							<input placeholder="Descripcion" type="text" name="Descripcion" id="" required> <!-- ESTA BIEN SI LO DEJAMOS EN TEXT? SINO NO AOARECE -->
 						</div>
 						<button class="button" type="submit">Agregar producto</button>
 					</form>

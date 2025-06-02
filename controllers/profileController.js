@@ -1,21 +1,26 @@
 const db = require('../database/models')
-const Usuario = db.Usuario //Preguntar si hace falta en cada uno que este
+const Usuario = db.Usuario 
 const bcrypt = require("bcryptjs")
 
 const profileController = {
     index: function(req, res){ 
-
-        Usuario.findAll({
-            include:[
-                    {association: "comentarios" },
-                    {association: "productos" }
-        ]})
-        .then(function(resultado){
-                res.render("profile", {datos:resultado})
-        })
-        .catch(function(error){
-            return res.send(error);
-        })},
+        if(req.session.userLoggeado == undefined){
+            return res.redirect("/profile/login")
+        }else{
+            Usuario.findByPk(req.session.userLoggeado.id, {
+                include:[
+                        {association: "comentarios" },
+                        {association: "productos" }
+            ]})
+            .then(function(resultado){
+                    console.log(resultado)
+                    res.render("profile", {datos:resultado})
+            })
+            .catch(function(error){
+                return res.send(error);
+            })
+        }
+        },
 
     login: function(req, res){
         if(req.session.userLoggeado != undefined){
@@ -80,11 +85,12 @@ const profileController = {
             usuario: req.body.usuario,
             email: req.body.email,
             contra: passEncriptada,
-            fecha: req.body.fecha
+            fecha: req.body.fecha,
+            foto_perfil: req.body.foto
         })
         .then(function(resultado){
             
-            return res.redirect("/profile/login");
+            return res.redirect("/profile/login"); 
         })
         .catch(function(error){
             return res.send("Este email ya fue usado");
